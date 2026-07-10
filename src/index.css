@@ -1,0 +1,30 @@
+
+@import "tailwindcss";
+
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+}
+
+.dark {
+  --bg: #0b1220;
+  --text: #e6eef8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+input::placeholder {
+  color: transparent;
+}
+
+.rp-country-list {
+  z-index: 60;
+}
+
+.motion-width {
+  transition: width 0.25s ease;
+}

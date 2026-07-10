@@ -1,0 +1,8 @@
+﻿{
+    "success":  true,
+    "message":  "OTP sent successfully.",
+    "data":  {
+                 "email":  "devuser@example.com",
+                 "emailSent":  true
+             }
+}

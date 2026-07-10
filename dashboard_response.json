@@ -1,0 +1,154 @@
+﻿{
+    "success":  true,
+    "data":  {
+                 "charities":  [
+                                   {
+                                       "id":  "youth",
+                                       "name":  "First Tee Futures",
+                                       "focus":  "Youth coaching and community access",
+                                       "impact":  "$148,200 deployed",
+                                       "mood":  "Rising access for first-generation players"
+                                   },
+                                   {
+                                       "id":  "water",
+                                       "name":  "Clean Water Forward",
+                                       "focus":  "Safe water infrastructure projects",
+                                       "impact":  "$92,300 deployed",
+                                       "mood":  "Steady utility funding with measurable reach"
+                                   },
+                                   {
+                                       "id":  "mental-health",
+                                       "name":  "Open Fairways Trust",
+                                       "focus":  "Mental wellbeing and recovery support",
+                                       "impact":  "$64,900 deployed",
+                                       "mood":  "Support for resilience and recovery"
+                                   }
+                               ],
+                 "baseScoreHistory":  [
+                                          {
+                                              "label":  "May 30",
+                                              "score":  42,
+                                              "date":  "2026-05-30T00:00:00.000Z"
+                                          },
+                                          {
+                                              "label":  "May 28",
+                                              "score":  36,
+                                              "date":  "2026-05-28T00:00:00.000Z"
+                                          },
+                                          {
+                                              "label":  "May 25",
+                                              "score":  38,
+                                              "date":  "2026-05-25T00:00:00.000Z"
+                                          }
+                                      ],
+                 "fallbackScores":  [
+                                        {
+                                            "date":  "May 30",
+                                            "score":  42
+                                        },
+                                        {
+                                            "date":  "May 28",
+                                            "score":  36
+                                        },
+                                        {
+                                            "date":  "May 25",
+                                            "score":  38
+                                        }
+                                    ],
+                 "recentScores":  [
+                                      {
+                                          "date":  "May 30",
+                                          "score":  42
+                                      },
+                                      {
+                                          "date":  "May 28",
+                                          "score":  36
+                                      },
+                                      {
+                                          "date":  "May 25",
+                                          "score":  38
+                                      }
+                                  ],
+                 "transactions":  [
+                                      {
+                                          "label":  "Win #123",
+                                          "value":  "+$50",
+                                          "tone":  "text-emerald-600"
+                                      },
+                                      {
+                                          "label":  "Win #122",
+                                          "value":  "+$25",
+                                          "tone":  "text-emerald-600"
+                                      }
+                                  ],
+                 "activities":  [
+                                    {
+                                        "type":  "score",
+                                        "label":  "Shot 36 at Pebble Beach",
+                                        "time":  "2 hours ago"
+                                    },
+                                    {
+                                        "type":  "win",
+                                        "label":  "Won $50 in monthly draw",
+                                        "time":  "1 day ago"
+                                    },
+                                    {
+                                        "type":  "score",
+                                        "label":  "Shot 36 at Pebble Beach",
+                                        "time":  "2 hours ago"
+                                    },
+                                    {
+                                        "type":  "win",
+                                        "label":  "Won $50 in monthly draw",
+                                        "time":  "1 day ago"
+                                    },
+                                    {
+                                        "type":  "charity",
+                                        "label":  "Supported local golf club",
+                                        "time":  "3 days ago"
+                                    }
+                                ],
+                 "aiInsights":  [
+                                    "Consistency Improved",
+                                    "Best Performance on Saturdays",
+                                    "Putting Accuracy Up 12%",
+                                    "Recommended: Practice Short Game"
+                                ],
+                 "revenueSplit":  [
+                                      {
+                                          "label":  "Charity Contribution",
+                                          "value":  "70%",
+                                          "width":  "70%"
+                                      },
+                                      {
+                                          "label":  "Platform",
+                                          "value":  "20%",
+                                          "width":  "20%"
+                                      },
+                                      {
+                                          "label":  "Other Causes",
+                                          "value":  "10%",
+                                          "width":  "10%"
+                                      }
+                                  ],
+                 "kpis":  {
+                              "impactScore":  "38.67",
+                              "rank":  "#2",
+                              "rewardsWon":  "$320",
+                              "activeDraws":  3,
+                              "charityImpact":  "$18,420"
+                          },
+                 "nextDraw":  {
+                                  "title":  "Mega Summer Draw 2025",
+                                  "countdown":  {
+                                                    "days":  "05",
+                                                    "hours":  "14",
+                                                    "minutes":  "32",
+                                                    "seconds":  "45"
+                                                }
+                              },
+                 "walletBalance":  "$320.00",
+                 "charityImpactTotal":  "$18,420",
+                 "platformShare":  "20%"
+             }
+}
