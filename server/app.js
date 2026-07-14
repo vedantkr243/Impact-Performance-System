@@ -52,7 +52,12 @@ app.use("/api/v1/data", dataRoutes);
 app.use("/api/v1/draw", drawRoutes);
 app.use("/api/v1/debug", debugRoutes);
 app.use("/api/v1/draws", drawsRoutes);
-
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "API is running"
+  });
+});
 app.use(notFoundHandler);
 app.use(errorHandler);
 
