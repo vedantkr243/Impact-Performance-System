@@ -7,7 +7,7 @@
 export const SUBSCRIPTION_PLANS = {
   MONTHLY: {
     code: 'monthly',
-    name: 'Normal',
+    name: 'Popular',
     price: 12,
     displayPrice: '$12 ',
     note: 'Flexible access with impact tracking',

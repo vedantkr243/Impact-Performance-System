@@ -13,5 +13,5 @@ const requireAdmin = (req, _res, next) => {
 };
 
 module.exports = {
-  requireAdmin
+  requireAdmin 
 };

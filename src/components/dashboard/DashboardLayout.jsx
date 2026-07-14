@@ -5,10 +5,12 @@ import { logout } from "../../features/auth/authSlice";
 import { resetDashboard } from "../../features/dashboard/dashboardSlice";
 import { ADMIN_NAV_ITEMS, USER_NAV_ITEMS } from "../../constants/dashboardNav";
 import { getRoleLabel } from "../../utils/roles";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function DashboardLayout({ variant = "user" }) {
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.auth);
+  const { logout: auth0Logout, isAuthenticated } = useAuth0();
 
   const navItems = variant === "admin" ? ADMIN_NAV_ITEMS : USER_NAV_ITEMS;
   const roleLabel = getRoleLabel(user);
@@ -16,6 +18,9 @@ function DashboardLayout({ variant = "user" }) {
   const handleLogout = () => {
     dispatch(logout());
     dispatch(resetDashboard());
+    if (isAuthenticated) {
+      auth0Logout({ logoutParams: { returnTo: window.location.origin } });
+    }
   };
 
   return (

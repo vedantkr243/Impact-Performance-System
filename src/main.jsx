@@ -8,6 +8,8 @@ import RootErrorBoundary from "./RootErrorBoundary";
 import "./index.css";
 import "./styles.css";
 
+import { Auth0Provider } from '@auth0/auth0-react';
+
 function setupSnippetExpander() {
   function handleKeyDown(e) {
     if (e.key !== "Enter") return;
@@ -63,15 +65,26 @@ export default ComponentName;
 
   document.addEventListener("keydown", handleKeyDown);
 }
-
 setupSnippetExpander();
-
+ const onRedirectCallback = (appState) => {
+  window.location.replace(appState?.returnTo || "/dashboard");
+};
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RootErrorBoundary>
       <Provider store={store}>
         <BrowserRouter>
-          <App />
+          <Auth0Provider
+  domain={import.meta.env.VITE_AUTH0_DOMAIN}
+  clientId={import.meta.env.VITE_AUTH0_CLIENT_ID}
+  cacheLocation="localstorage"
+  useRefreshTokens={true}
+  authorizationParams={{
+    redirect_uri: window.location.origin + "/login",
+  }}
+>
+      <App />
+    </Auth0Provider>
         </BrowserRouter>
       </Provider>
     </RootErrorBoundary>

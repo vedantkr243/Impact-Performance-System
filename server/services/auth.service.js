@@ -123,7 +123,14 @@ const signup = async ({ name, firstName, lastName, email, password, role, accoun
 
   return buildAuthResponse(user);
 };
-
+const auth0SignIn = async ({email}) => {
+  const user = await User.findOne({ email: email });
+  if (!user) {
+    throw new ApiError(401, "Invalid email.");
+    console.log("User not found for email:", email); // Debugging log
+  }
+  return buildAuthResponse(user);
+}
 const login = async ({ email, password }) => {
   const normalizedEmail = email.toLowerCase().trim();
 
@@ -141,7 +148,7 @@ const login = async ({ email, password }) => {
     }
 
     return buildAuthResponse(user);
-}
+};
 
   const user = await User.findOne({ email: normalizedEmail });
 
@@ -304,5 +311,6 @@ module.exports = {
   getCurrentUser,
   updateProfile,
   uploadProfilePhoto,
-  changePassword
+  changePassword,
+  auth0SignIn
 };

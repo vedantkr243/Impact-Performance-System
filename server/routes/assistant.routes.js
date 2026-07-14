@@ -8,3 +8,4 @@ const router = express.Router();
 router.post("/ask", authenticate, assistantController.askAssistant);
 
 module.exports = router;
+

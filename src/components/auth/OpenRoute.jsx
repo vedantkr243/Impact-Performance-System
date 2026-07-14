@@ -4,7 +4,6 @@ import { getDashboardPath } from "../../utils/roles";
 
 function OpenRoute({ children }) {
   const { token, user } = useSelector((state) => state.auth);
-
   // Only redirect to dashboard when both a token and user are available.
   // Prevents unintended redirects when token exists but user data hasn't been loaded.
   if (token && user) {

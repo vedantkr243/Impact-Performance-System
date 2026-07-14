@@ -12,13 +12,17 @@
     "install-all": "npm install && npm install --prefix server"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.21.0",
     "@hookform/resolvers": "^5.4.0",
     "@reduxjs/toolkit": "^2.11.2",
     "@tailwindcss/vite": "^4.3.0",
     "axios": "^1.16.0",
     "clsx": "^2.1.1",
     "concurrently": "^9.2.1",
+    "express-jwt": "^8.5.1",
     "framer-motion": "^12.40.0",
+    "jsonwebtoken": "^9.0.3",
+    "jwks-rsa": "^4.1.0",
     "lucide-react": "^0.474.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",

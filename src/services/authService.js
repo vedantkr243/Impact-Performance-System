@@ -20,7 +20,56 @@ export const authService = {
   clearSession() {
     localStorage.removeItem(AUTH_STORAGE_KEY);
   },
+async auth0Login(accessToken) {
+  const response = await apiConnector({
+    method: "POST",
+    url: "/api/v1/auth/auth0-login",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
+  saveSession(response.data);
+  return response.data;
+},
+async auth0Signup(accessToken, payload) {
+  const name =
+    payload.name?.trim() ||
+    [payload.firstName, payload.lastName].filter(Boolean).join(" ").trim();
+
+  const response = await apiConnector({
+    method: "POST",
+    url: "/api/v1/auth/auth0-signup",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+    body: {
+      name,
+      email: payload.email,
+      role: payload.accountType,
+      accountType: payload.accountType,
+      contactNumber: payload.contactNumber || null,
+      selectedCharityName: payload.selectedCharityName || null
+    }
+  });
+
+  const session = {
+    ...response.data,
+    selectedPlan: payload.plan
+  };
+
+  saveSession(session);
+  return session;
+},
+async auth0GetMe(user) {
+  const response = await apiConnector({
+    method:"POST",
+    url: "/api/v1/auth/auth0SignIn",
+    body: user
+  });
+  saveSession(response.data);
+    return response.data;
+},
   async login(credentials) {
     const response = await apiConnector({
       method: "POST",

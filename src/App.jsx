@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "./app/hooks";
 import { refreshSession } from "./features/auth/authSlice";
 import AppRoutes from "./routes/AppRoutes";
 import "./App.css";
-
+import { Auth0Provider } from '@auth0/auth0-react';
 function App() {
   const dispatch = useAppDispatch();
   const { token } = useAppSelector((state) => state.auth);

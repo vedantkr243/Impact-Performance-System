@@ -379,7 +379,7 @@ function ParticipatedEndedDrawCard({ draw }) {
   const scoreHistory = useAppSelector(
   (state) => state.dashboard
 );
-console.log("scoreHistory:", scoreHistory);
+
 // console.log("state.dashboard",state.dashboard);
   const auth = useAppSelector((state) => state.auth);
 const [recentScoresState, setRecentScoresState] = useState([]);
@@ -422,10 +422,6 @@ const recentScores = useMemo(() => {
     : typeof draw.randomNumber === "number"
     ? [draw.randomNumber]
     : [];
-    console.log("recentscoes", recentScores);
-    console.log("scoreHistory:", scoreHistory);
-console.log("recentScoresState:", recentScoresState);
-console.log("recentScores:", recentScores);
   const isWinner = draw.myEntry?.prizeAmount > 0;
 
   return (

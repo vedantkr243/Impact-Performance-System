@@ -19,7 +19,6 @@ export const apiConnector = async ({ method = "GET", url, body, token }) => {
       headers: buildHeaders(token, isFormData),
       body: isFormData ? body : (body ? JSON.stringify(body) : undefined)
     });
-     console.log(response);
   } catch {
     throw new Error(
       "Cannot reach the server. Run npm run dev and ensure the backend is running on port 5000."

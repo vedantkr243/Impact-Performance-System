@@ -86,7 +86,6 @@ function DashboardPage() {
     walletBalance,
     platformShare
   } = useAppSelector((state) => state.dashboard);
-console.log("scorehistory", scoreHistory);
   const [fallbackScoresState, setFallbackScoresState] = useState([]);
   const [recentScoresState, setRecentScoresState] = useState([]);
   const [transactionsState, setTransactionsState] = useState([]);

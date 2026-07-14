@@ -22,7 +22,6 @@ import SubscriptionPage from "../pages/SubscriptionPage";
 import { ROUTES } from "../constants/config";
 import { isAdmin } from "../utils/roles";
 import { useAppSelector } from "../app/hooks";
-
 function UserDashboardLayout() {
   const { user } = useAppSelector((state) => state.auth);
 
@@ -46,7 +45,7 @@ function AppRoutes() {
       <Route path="/signup/subscription" element={<OpenRoute><SignupSubscription /></OpenRoute>} />
       <Route path="/login" element={<OpenRoute><AuthScreen mode="login" /></OpenRoute>} />
       <Route path="/signup-account" element={<OpenRoute><AuthScreen mode="signup" /></OpenRoute>} />
-
+      
       <Route element={<PrivateRoute><UserDashboardLayout /></PrivateRoute>}>
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path={ROUTES.PROFILE} element={<ProfilePage />} />

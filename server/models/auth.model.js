@@ -19,7 +19,11 @@ const userSchema = new mongoose.Schema(
     },
     passwordHash: {
       type: String,
-      required: true
+      required: false
+    },
+    provider: {
+      type: String,
+      default: "local"
     },
     role: {
       type: String,
