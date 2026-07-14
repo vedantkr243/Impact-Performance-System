@@ -21,7 +21,7 @@ export const apiConnector = async ({ method = "GET", url, body, token }) => {
     });
   } catch {
     throw new Error(
-      "Cannot reach the server. Run npm run dev and ensure the backend is running on port 5000."
+      "Cannot reach the server. Run npm run dev and ensure the backend is running on PORT 5000."
     );
       }
 

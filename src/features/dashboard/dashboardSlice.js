@@ -248,7 +248,7 @@ const dashboardSlice = createSlice({
         state.error = action.payload || "Something went wrong while loading the dashboard.";
         state.assistantNotes = [
           "Backend connection failed.",
-          "Check whether your server is running on port 5000.",
+          "Check whether your server is running on PORT5000.",
           "Then reload the dashboard to pull live data."
         ];
       });

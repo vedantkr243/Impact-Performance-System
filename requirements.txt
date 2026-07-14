@@ -1,9 +1,0 @@
-fastapi
-uvicorn
-pydantic
-google-generativeai
-google-auth
-python-jose[cryptography]
-httpx
-motor
-python-dotenv

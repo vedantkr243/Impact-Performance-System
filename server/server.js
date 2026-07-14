@@ -11,7 +11,7 @@ const connectDatabase = require("./config/database");
 
 (async () => {
   const connected = await connectDatabase.connect();
-  const port = env.port;
+  const PORT = env.port;
 
   if (!process.env.MAIL_HOST) {
     console.warn(
@@ -20,7 +20,7 @@ const connectDatabase = require("./config/database");
   }
 
   app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Server running on PORT ${port}`);
     if (!connected) {
       console.log("Running with in-memory data store (development fallback)");
     }
