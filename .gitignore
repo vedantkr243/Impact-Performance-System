@@ -26,4 +26,3 @@ dist-ssr
 server/.env
 .env
 server/.env.example
-server/config/env.js
