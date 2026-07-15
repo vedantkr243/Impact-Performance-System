@@ -6,10 +6,10 @@ export const fetchFrontpageData = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const [footerRes, stepsRes, featuresRes, impactRes] = await Promise.all([
-        axios.get('/api/v1/content/footer'),
-        axios.get('/api/v1/content/how-it-works'),
-        axios.get('/api/v1/content/features'),
-        axios.get('/api/v1/content/impact')
+        axios.get(' api/v1/content/footer'),
+        axios.get(' api/v1/content/how-it-works'),
+        axios.get(' api/v1/content/features'),
+        axios.get(' api/v1/content/impact')
       ]);
 
       return {

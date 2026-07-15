@@ -24,7 +24,7 @@ app.use(fileUpload({
   useTempFiles: true,
   tempFileDir: "/tmp/"
 }));
-app.use("/api/v1/billing/webhooks/razorpay", express.raw({ type: "application/json" }));
+app.use(" api/v1/billing/webhooks/razorpay", express.raw({ type: "application/json" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
@@ -41,17 +41,17 @@ app.get("/health", (_req, res) => {
 });
 
 
-app.use("/api/v1/auth", authRoutes);
-app.use("/api/v1/assistant", assistantRoutes);
-app.use("/api/v1/billing", billingRoutes);
-app.use("/api/v1/charity", charityRoutes);
-app.use("/api/v1/score-analytics", scoreAnalyticsRoutes);
-app.use("/api/v1/scores", scoreRoutes);
-app.use("/api/v1/static", staticRoutes);
-app.use("/api/v1/data", dataRoutes);
-app.use("/api/v1/draw", drawRoutes);
-app.use("/api/v1/debug", debugRoutes);
-app.use("/api/v1/draws", drawsRoutes);
+app.use(" api/v1/auth", authRoutes);
+app.use(" api/v1/assistant", assistantRoutes);
+app.use(" api/v1/billing", billingRoutes);
+app.use(" api/v1/charity", charityRoutes);
+app.use(" api/v1/score-analytics", scoreAnalyticsRoutes);
+app.use(" api/v1/scores", scoreRoutes);
+app.use(" api/v1/static", staticRoutes);
+app.use(" api/v1/data", dataRoutes);
+app.use(" api/v1/draw", drawRoutes);
+app.use(" api/v1/debug", debugRoutes);
+app.use(" api/v1/draws", drawsRoutes);
 app.get("/", (req, res) => {
   res.json({
     success: true,

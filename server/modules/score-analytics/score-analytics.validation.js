@@ -1,4 +1,4 @@
-const ApiError = require("../../utils/api-error");
+const ApiError = require("../../utils api-error");
 
 const validateScorePayload = ({ scores }) => {
   if (!Array.isArray(scores) || scores.length < 3) {

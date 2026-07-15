@@ -13,7 +13,7 @@ const { notFoundHandler, errorHandler } = require("../middleware/errormiddleware
 const app = express();
 
 app.use(cors());
-app.use("/api/v1/billing/webhooks/razorpay", express.raw({ type: "application/json" }));
+app.use(" api/v1/billing/webhooks/razorpay", express.raw({ type: "application/json" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -29,7 +29,7 @@ app.get("/health", (_req, res) => {
 });
 
 // 1. How It Works Data
-app.get('/api/v1/content/how-it-works', (req, res) => {
+app.get(' api/v1/content/how-it-works', (req, res) => {
   const steps = [
     {
       title: "Enter your scores",
@@ -52,7 +52,7 @@ app.get('/api/v1/content/how-it-works', (req, res) => {
 });
 
 // 2. Features Data
-app.get('/api/v1/content/features', (req, res) => {
+app.get(' api/v1/content/features', (req, res) => {
   const features = [
     {
       title: "AI Insights",
@@ -75,7 +75,7 @@ app.get('/api/v1/content/features', (req, res) => {
 });
 
 // 3. Impact Data
-app.get('/api/v1/content/impact', (req, res) => {
+app.get(' api/v1/content/impact', (req, res) => {
   res.json({
     donated: "₹2,50,000",
     activeUsers: "1,200",
@@ -85,7 +85,7 @@ app.get('/api/v1/content/impact', (req, res) => {
 });
 
 // 4. Footer Data
-app.get('/api/v1/content/footer', (req, res) => {
+app.get(' api/v1/content/footer', (req, res) => {
   const footerData = {
     mission: "Empowering performance through AI insights and social contribution.",
     contactEmail: "hello@anyhelp.org",
@@ -101,12 +101,12 @@ app.get('/api/v1/content/footer', (req, res) => {
   res.json(footerData);
 });
 
-app.use("/api/v1/auth", authRoutes);
-app.use("/api/v1/assistant", assistantRoutes);
-app.use("/api/v1/billing", billingRoutes);
-app.use("/api/v1/score-analytics", scoreAnalyticsRoutes);
-app.use("/api/v1/static", staticRoutes);
-app.use("/api/v1/data", dataRoutes);
+app.use(" api/v1/auth", authRoutes);
+app.use(" api/v1/assistant", assistantRoutes);
+app.use(" api/v1/billing", billingRoutes);
+app.use(" api/v1/score-analytics", scoreAnalyticsRoutes);
+app.use(" api/v1/static", staticRoutes);
+app.use(" api/v1/data", dataRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

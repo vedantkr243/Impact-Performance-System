@@ -7,7 +7,7 @@ const Score = require("../models/Score");
 
 const router = express.Router();
 
-// GET /api/v1/debug/db-status
+// GET  api/v1/debug/db-status
 // Returns whether app is using memory store and mongoose connection state
 router.get(
   "/db-status",
@@ -27,7 +27,7 @@ router.get(
   })
 );
 
-// GET /api/v1/debug/user?email=...
+// GET  api/v1/debug/user?email=...
 // Returns data about a user from memory store and MongoDB (if present)
 router.get(
   "/user",
@@ -64,7 +64,7 @@ router.get(
   })
 );
 
-// POST /api/v1/debug/migrate (body: { email })
+// POST  api/v1/debug/migrate (body: { email })
 // If a user exists in memoryStore but not in MongoDB, create it in Mongo using the same fields
 router.post(
   "/migrate",

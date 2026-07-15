@@ -1,6 +1,6 @@
 const otpGenerator = require("otp-generator");
 
-const ApiError = require("../utils/api-error");
+const ApiError = require("../utils api-error");
 const { isUsingMemoryStore } = require("../config/database");
 const memoryStore = require("../dev/memoryStore");
 const { sendOtpEmail } = require("../utils/sendOtpEmail");

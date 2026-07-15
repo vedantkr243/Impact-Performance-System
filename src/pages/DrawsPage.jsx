@@ -10,7 +10,7 @@ import {
   CreditCard, Eye
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { apiConnector } from "../services/apiConnector";
+import { apiConnector } from "../services apiConnector";
 import { useAppSelector } from "../app/hooks";
 import { useDrawCountdown } from "../hooks/useDrawCountdown";
 import { staticDataService } from "../services/staticDataService";
@@ -753,7 +753,7 @@ export default function DrawsPage() {
   const loadSubscription = useCallback(async () => {
     if (!token) return;
     try {
-      const resp = await apiConnector({ method: "GET", url: "/api/v1/billing/subscription", token });
+      const resp = await apiConnector({ method: "GET", url: " api/v1/billing/subscription", token });
       const sub = resp?.data?.subscription || resp?.data || resp?.subscription || null;
       if (sub?.planCode) setUserSubscription(sub);
     } catch {

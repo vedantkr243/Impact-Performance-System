@@ -1,6 +1,6 @@
 const crypto = require("crypto");
 const env = require("../config/env");
-const ApiError = require("../utils/api-error");
+const ApiError = require("../utils api-error");
 const { isUsingMemoryStore } = require("../config/database");
 const memoryDataStore = require("../dev/memoryDataStore");
 const Draw = require("../modules/data/models/draw.model");

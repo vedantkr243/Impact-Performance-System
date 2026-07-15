@@ -1,4 +1,4 @@
-const ApiError = require("../utils/api-error");
+const ApiError = require("../utils api-error");
 const User = require("../models/auth.model");
 const Subscription = require("../modules/billing/billing.model");
 const { ACTIVE_SUBSCRIPTION_STATUSES } = require("../modules/billing/billing.constants");

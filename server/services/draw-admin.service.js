@@ -1,5 +1,5 @@
 const crypto = require("crypto");
-const ApiError = require("../utils/api-error");
+const ApiError = require("../utils api-error");
 const Draw = require("../modules/data/models/draw.model");
 const DrawEntry = require("../modules/data/models/draw-entry.model");
 const Winning = require("../models/Winning");

@@ -93,7 +93,7 @@ console.log(req.auth);
             user = await User.create({
                 email,
                 name: profile.name || profile.nickname || "Auth0 User",
-                image: profile.picture || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.name || "User"}`,
+                image: profile.picture || `https:/ api.dicebear.com/7.x/initials/svg?seed=${profile.name || "User"}`,
                 provider: "auth0",
             });
         } else {

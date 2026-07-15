@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const env = require("../config/env");
-const ApiError = require("../utils/api-error");
+const ApiError = require("../utils api-error");
 const User = require("../models/auth.model");
 const { isUsingMemoryStore } = require("../config/database");
 const memoryStore = require("../dev/memoryStore");

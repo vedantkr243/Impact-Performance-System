@@ -1,4 +1,4 @@
-const ApiError = require("../../utils/api-error");
+const ApiError = require("../../utils api-error");
 
 const validateCheckoutPayload = ({ plan }) => {
   if (!plan) {

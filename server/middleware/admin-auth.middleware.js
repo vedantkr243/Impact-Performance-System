@@ -1,4 +1,4 @@
-const ApiError = require("../utils/api-error");
+const ApiError = require("../utils api-error");
 
 const requireAdmin = (req, _res, next) => {
   if (!req.user) {

@@ -20,7 +20,7 @@ export const auth0LoginSuccess = createAsyncThunk(
       console.log("Sending token:", accessToken);
 
       const response = await axios.post(
-        "/api/v1/auth/auth0-login",
+        " api/v1/auth/auth0-login",
         {},
         {
           headers: {
