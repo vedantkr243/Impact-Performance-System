@@ -14,7 +14,7 @@ import {
 import { staticDataService } from "../services/staticDataService";
 import { resolveIcon } from "../utils/iconMap";
 import { useAppSelector } from "../app/hooks";
-import { apiconnector } from "../services/apiconnector";
+import { apiConnector } from "../services/apiConnector";
 
 // ─── Speech Recognition helper ───────────────────────────────────────────────
 const SpeechRecognitionAPI =
@@ -90,7 +90,7 @@ function TalkModal({ onClose, token, assistantContext, voicePrompts }) {
       setLoading(true);
 
       try {
-        const response = await apiconnector({
+        const response = await apiConnector({
           method: "POST",
           url: " api/v1/assistant/ask",
           token,

@@ -1,4 +1,4 @@
-import {   apiconnector } from "./apiconnector";
+import {   apiConnector } from "./apiConnector";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const normalizeScores = (scores) =>
   scores.map((item) => ({
@@ -8,7 +8,7 @@ const normalizeScores = (scores) =>
 
 export const dashboardService = {
   async getCurrentUser(token) {
-    const response = await   apiconnector({
+    const response = await   apiConnector({
       method: "GET",
       url: `${BASE_URL} api/v1/auth/me`,
       token
@@ -18,7 +18,7 @@ export const dashboardService = {
   },
 
   async getBillingPlans() {
-    const response = await   apiconnector({
+    const response = await   apiConnector({
       method: "GET",
       url: `${BASE_URL} api/v1/billing/plans`
     });
@@ -27,7 +27,7 @@ export const dashboardService = {
   },
 
   async getSubscription(token) {
-    const response = await   apiconnector({
+    const response = await   apiConnector({
       method: "GET",
       url: `${BASE_URL} api/v1/billing/subscription`,
       token
@@ -37,7 +37,7 @@ export const dashboardService = {
   },
 
   async getScoreAnalysis(token, scores) {
-    const response = await   apiconnector({
+    const response = await   apiConnector({
       method: "POST",
       url: `${BASE_URL} api/v1/score-analytics/analyze`,
       token,
@@ -56,7 +56,7 @@ export const dashboardService = {
     if (date) formData.append("date", date);
     if (proofFile) formData.append("proof", proofFile);
 
-    const response = await   apiconnector({
+    const response = await   apiConnector({
       method: "POST",
       url: `${BASE_URL} api/v1/scores`,
       token,
@@ -67,7 +67,7 @@ export const dashboardService = {
   },
 
   async getAssistantReply(token, { question, scores, charity, subscription }) {
-    const response = await   apiconnector({
+    const response = await   apiConnector({
       method: "POST",
       url: `${BASE_URL} api/v1/assistant/ask`,
       token,
@@ -93,7 +93,7 @@ export const dashboardService = {
 
   // Profile Management
   async updateProfile(token, { name, contactNumber }) {
-    return await   apiconnector({
+    return await   apiConnector({
       method: "PUT",
       url: `${BASE_URL} api/v1/auth/profile`,
       token,
@@ -104,7 +104,7 @@ export const dashboardService = {
   async uploadProfilePhoto(token, file) {
     const formData = new FormData();
     formData.append("photo", file);
-    return await   apiconnector({
+    return await   apiConnector({
       method: "PUT",
       url: `${BASE_URL} api/v1/auth/profile/photo`,
       token,
@@ -113,7 +113,7 @@ export const dashboardService = {
   },
 
   async changePassword(token, { currentPassword, newPassword, confirmPassword }) {
-    return await   apiconnector({
+    return await   apiConnector({
       method: "PUT",
       url: `${BASE_URL} api/v1/auth/profile/password`,
       token,
@@ -123,7 +123,7 @@ export const dashboardService = {
 
   // Score Verification (Admin)
   async getPendingScores(token) {
-    return await   apiconnector({
+    return await   apiConnector({
       method: "GET",
       url: `${BASE_URL} api/v1/scores/pending`,
       token
@@ -131,7 +131,7 @@ export const dashboardService = {
   },
 
   async approveScore(token, scoreId) {
-    return await   apiconnector({
+    return await   apiConnector({
       method: "PUT",
       url: `${BASE_URL} api/v1/scores/${scoreId}/approve`,
       token
@@ -139,7 +139,7 @@ export const dashboardService = {
   },
 
   async rejectScore(token, scoreId) {
-    return await   apiconnector({
+    return await   apiConnector({
       method: "PUT",
       url: `${BASE_URL} api/v1/scores/${scoreId}/reject`,
       token

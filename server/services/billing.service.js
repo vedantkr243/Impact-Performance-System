@@ -1,7 +1,7 @@
 const crypto = require("crypto");
 
 const env = require("../config/env");
-const ApiError = require("../utils api-error");
+const ApiError = require("../utils/api-error");
 const { isUsingMemoryStore } = require("../config/database");
 const memoryStore = require("../dev/memoryStore");
 const memoryDataStore = require("../dev/memoryDataStore");

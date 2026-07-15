@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 const env = require("../config/env");
-const ApiError = require("../utils api-error");
+const ApiError = require("../utils/api-error");
 const { hashPassword, comparePassword } = require("../utils/password");
 const { uploadImage } = require("../utils/fileUpload");
 const { isUsingMemoryStore } = require("../config/database");

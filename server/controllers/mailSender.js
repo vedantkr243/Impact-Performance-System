@@ -21,7 +21,7 @@ const mailSender = async (email, title, body) => {
 
   const transporter = nodemailer.createTransport({
     host,
-    port,
+    PORT,
     secure: PORT=== 465,
     auth: { user, pass },
     connectionTimeout: 10000,

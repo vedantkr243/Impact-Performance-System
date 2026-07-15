@@ -1,4 +1,4 @@
-const ApiError = require("../../utils api-error");
+const ApiError = require("../../utils/api-error");
 
 const validateAssistantPayload = ({ question, context }) => {
   if (!question || typeof question !== "string" || !question.trim()) {

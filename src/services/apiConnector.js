@@ -9,7 +9,7 @@ const buildHeaders = (token, isFormData) => {
   return headers;
 };
 
-export const apiconnector = async ({ method = "GET", url, body, token }) => {
+export const apiConnector = async ({ method = "GET", url, body, token }) => {
   let response;
   const isFormData = body instanceof FormData;
 
