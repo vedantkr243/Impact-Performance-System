@@ -10,7 +10,7 @@ export const dashboardService = {
   async getCurrentUser(token) {
     const response = await   apiConnector({
       method: "GET",
-      url: `${BASE_URL} api/v1/auth/me`,
+      url: `${BASE_URL}/api/v1/auth/me`,
       token
     });
 
@@ -20,7 +20,7 @@ export const dashboardService = {
   async getBillingPlans() {
     const response = await   apiConnector({
       method: "GET",
-      url: `${BASE_URL} api/v1/billing/plans`
+      url: `${BASE_URL}/api/v1/billing/plans`
     });
 
     return response.data;
@@ -29,7 +29,7 @@ export const dashboardService = {
   async getSubscription(token) {
     const response = await   apiConnector({
       method: "GET",
-      url: `${BASE_URL} api/v1/billing/subscription`,
+      url: `${BASE_URL}/api/v1/billing/subscription`,
       token
     });
 
@@ -39,7 +39,7 @@ export const dashboardService = {
   async getScoreAnalysis(token, scores) {
     const response = await   apiConnector({
       method: "POST",
-      url: `${BASE_URL} api/v1/score-analytics/analyze`,
+      url: `${BASE_URL}/api/v1/score-analytics/analyze`,
       token,
       body: {
         scores: normalizeScores(scores)
@@ -58,7 +58,7 @@ export const dashboardService = {
 
     const response = await   apiConnector({
       method: "POST",
-      url: `${BASE_URL} api/v1/scores`,
+      url: `${BASE_URL}/api/v1/scores`,
       token,
       body: formData
     });
@@ -69,7 +69,7 @@ export const dashboardService = {
   async getAssistantReply(token, { question, scores, charity, subscription }) {
     const response = await   apiConnector({
       method: "POST",
-      url: `${BASE_URL} api/v1/assistant/ask`,
+      url: `${BASE_URL}/api/v1/assistant/ask`,
       token,
       body: {
         question,
@@ -95,7 +95,7 @@ export const dashboardService = {
   async updateProfile(token, { name, contactNumber }) {
     return await   apiConnector({
       method: "PUT",
-      url: `${BASE_URL} api/v1/auth/profile`,
+      url: `${BASE_URL}/api/v1/auth/profile`,
       token,
       body: { name, contactNumber }
     });
@@ -106,7 +106,7 @@ export const dashboardService = {
     formData.append("photo", file);
     return await   apiConnector({
       method: "PUT",
-      url: `${BASE_URL} api/v1/auth/profile/photo`,
+      url: `${BASE_URL}/api/v1/auth/profile/photo`,
       token,
       body: formData
     });
@@ -115,7 +115,7 @@ export const dashboardService = {
   async changePassword(token, { currentPassword, newPassword, confirmPassword }) {
     return await   apiConnector({
       method: "PUT",
-      url: `${BASE_URL} api/v1/auth/profile/password`,
+      url: `${BASE_URL}/api/v1/auth/profile/password`,
       token,
       body: { currentPassword, newPassword, confirmPassword }
     });
@@ -125,7 +125,7 @@ export const dashboardService = {
   async getPendingScores(token) {
     return await   apiConnector({
       method: "GET",
-      url: `${BASE_URL} api/v1/scores/pending`,
+      url: `${BASE_URL}/api/v1/scores/pending`,
       token
     });
   },
@@ -133,7 +133,7 @@ export const dashboardService = {
   async approveScore(token, scoreId) {
     return await   apiConnector({
       method: "PUT",
-      url: `${BASE_URL} api/v1/scores/${scoreId}/approve`,
+      url: `${BASE_URL}/api/v1/scores/${scoreId}/approve`,
       token
     });
   },
@@ -141,7 +141,7 @@ export const dashboardService = {
   async rejectScore(token, scoreId) {
     return await   apiConnector({
       method: "PUT",
-      url: `${BASE_URL} api/v1/scores/${scoreId}/reject`,
+      url: `${BASE_URL}/api/v1/scores/${scoreId}/reject`,
       token
     });
   }

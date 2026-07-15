@@ -92,7 +92,7 @@ function TalkModal({ onClose, token, assistantContext, voicePrompts }) {
       try {
         const response = await apiConnector({
           method: "POST",
-          url: " api/v1/assistant/ask",
+          url: "/api/v1/assistant/ask",
           token,
           body: {
             question: text,

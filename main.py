@@ -72,7 +72,7 @@ async def upsert_user(user_data: Dict[str, Any]):
     result = await users_collection.update_one(query, update, upsert=True)
     return result
 
-@app.post(" api/v1/auth/google")
+@app.post("/api/v1/auth/google")
 async def google_login(auth: AuthToken):
     """
     Verifies a Google ID Token received from the frontend.
@@ -104,7 +104,7 @@ async def google_login(auth: AuthToken):
     except ValueError:
         raise HTTPException(status_code=401, detail="Invalid Google token")
 
-@app.post(" api/v1/auth/apple")
+@app.post("/api/v1/auth/apple")
 async def apple_login(auth: AuthToken):
     """
     Verifies an Apple ID Token (JWT) received from the frontend.
@@ -140,7 +140,7 @@ async def apple_login(auth: AuthToken):
     except Exception as e:
         raise HTTPException(status_code=401, detail=f"Invalid Apple token: {str(e)}")
 
-@app.post(" api/v1/ai/insights")
+@app.post("/api/v1/ai/insights")
 async def get_functional_insights(data: PerformanceData):
     """
     Analyzes raw golf data and returns functional AI insights.

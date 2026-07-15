@@ -23,7 +23,7 @@ export const authService = {
 async auth0Login(accessToken) {
   const response = await  apiConnector({
     method: "POST",
-    url: `${BASE_URL} api/v1/auth/auth0-login`,
+    url: `${BASE_URL}/api/v1/auth/auth0-login`,
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
@@ -39,7 +39,7 @@ async auth0Signup(accessToken, payload) {
 
   const response = await  apiConnector({
     method: "POST",
-    url: `${BASE_URL} api/v1/auth/auth0-signup`,
+    url: `${BASE_URL}/api/v1/auth/auth0-signup`,
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
@@ -64,7 +64,7 @@ async auth0Signup(accessToken, payload) {
 async auth0GetMe(user) {
   const response = await  apiConnector({
     method:"POST",
-    url: `${BASE_URL} api/v1/auth/auth0SignIn`,
+    url: `${BASE_URL}/api/v1/auth/auth0SignIn`,
     body: user
   });
   saveSession(response.data);
@@ -73,7 +73,7 @@ async auth0GetMe(user) {
   async login(credentials) {
     const response = await  apiConnector({
       method: "POST",
-      url: `${BASE_URL} api/v1/auth/login`,
+      url: `${BASE_URL}/api/v1/auth/login`,
       body: credentials
     });
 
@@ -84,7 +84,7 @@ async auth0GetMe(user) {
   async sendOtp({ email }) {
     const response = await  apiConnector({
       method: "POST",
-      url: `${BASE_URL} api/v1/auth/send-otp`,
+      url: `${BASE_URL}/api/v1/auth/send-otp`,
       body: { email }
     });
 
@@ -94,7 +94,7 @@ async auth0GetMe(user) {
   async verifyOtp({ email, otp }) {
     const response = await  apiConnector({
       method: "POST",
-      url: `${BASE_URL} api/v1/auth/verify-otp`,
+      url: `${BASE_URL}/api/v1/auth/verify-otp`,
       body: { email, otp }
     });
 
@@ -108,7 +108,7 @@ async auth0GetMe(user) {
 
     const response = await  apiConnector({
       method: "POST",
-      url: `${BASE_URL} api/v1/auth/signup`,
+      url: `${BASE_URL}/api/v1/auth/signup`,
       body: {
         name,
         email: payload.email,
@@ -133,7 +133,7 @@ async auth0GetMe(user) {
   async getMe(token) {
     const response = await   apiConnector({
       method: "GET",
-      url: `${BASE_URL} api/v1/auth/me`,
+      url: `${BASE_URL}/api/v1/auth/me`,
       token
     });
 

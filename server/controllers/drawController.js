@@ -27,7 +27,7 @@ const getUserSubscription = async (userId) => {
     .lean();
 };
 
-// ─── GET  api/v1/draws ────────────────────────────────────────────────────────
+// ─── GET /api/v1/draws ────────────────────────────────────────────────────────
 // Users: only "open" draws OR draws they entered | Admins: all draws
 exports.listDraws = asyncHandler(async (req, res) => {
   const isAdmin = req.user?.role === "admin";
@@ -112,7 +112,7 @@ exports.listDraws = asyncHandler(async (req, res) => {
   res.json({ success: true, data: { draws: enriched } });
 });
 
-// ─── POST  api/v1/draws/:id/enter ─────────────────────────────────────────────
+// ─── POST /api/v1/draws/:id/enter ─────────────────────────────────────────────
 exports.enterDraw = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const userId = String(req.user._id || req.user.id || req.user.sub);
@@ -224,7 +224,7 @@ exports.enterDraw = asyncHandler(async (req, res) => {
   res.status(201).json({ success: true, message: "Entry confirmed!", data: entry });
 });
 
-// ─── GET  api/v1/draws/:id/details (admin only) ───────────────────────────────
+// ─── GET /api/v1/draws/:id/details (admin only) ───────────────────────────────
 exports.getDrawDetails = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const draw = await drawAdminService.getDraw(id);
@@ -290,7 +290,7 @@ exports.getDrawDetails = asyncHandler(async (req, res) => {
   });
 });
 
-// ─── PUT  api/v1/draws/:id (admin: update requiredPlan, status, etc.) ─────────
+// ─── PUT /api/v1/draws/:id (admin: update requiredPlan, status, etc.) ─────────
 exports.updateDraw = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
@@ -307,13 +307,13 @@ exports.updateDraw = asyncHandler(async (req, res) => {
   res.json({ success: true, data: updated });
 });
 
-// ─── POST  api/v1/draws (admin: create draw) ──────────────────────────────────
+// ─── POST /api/v1/draws (admin: create draw) ──────────────────────────────────
 exports.createDraw = asyncHandler(async (req, res) => {
   const draw = await drawAdminService.createDraw(req.body);
   res.status(201).json({ success: true, data: draw });
 });
 
-// ─── DELETE  api/v1/draws/:id (admin) ─────────────────────────────────────────
+// ─── DELETE /api/v1/draws/:id (admin) ─────────────────────────────────────────
 exports.deleteDraw = asyncHandler(async (req, res) => {
   await drawAdminService.deleteDraw(req.params.id);
   res.json({ success: true, message: "Draw deleted." });

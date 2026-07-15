@@ -83,12 +83,12 @@ export const DEFAULT_CHARITIES = [
 // API ENDPOINTS
 // ============================================
 export const API_ENDPOINTS = {
-  AUTH: ' api/v1/auth',
-  BILLING: ' api/v1/billing',
-  DASHBOARD: ' api/v1/dashboard',
-  STATIC: ' api/v1/static',
-  ANALYTICS: ' api/v1/score-analytics',
-  ASSISTANT: ' api/v1/assistant'
+  AUTH: '/api/v1/auth',
+  BILLING: '/api/v1/billing',
+  DASHBOARD: '/api/v1/dashboard',
+  STATIC: '/api/v1/static',
+  ANALYTICS: '/api/v1/score-analytics',
+  ASSISTANT: '/api/v1/assistant'
 };
 
 // ============================================

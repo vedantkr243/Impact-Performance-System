@@ -752,7 +752,7 @@ export default function DrawsPage() {
   const loadSubscription = useCallback(async () => {
     if (!token) return;
     try {
-      const resp = await   apiConnector({ method: "GET", url: " api/v1/billing/subscription", token });
+      const resp = await   apiConnector({ method: "GET", url: "/api/v1/billing/subscription", token });
       const sub = resp?.data?.subscription || resp?.data || resp?.subscription || null;
       if (sub?.planCode) setUserSubscription(sub);
     } catch {
