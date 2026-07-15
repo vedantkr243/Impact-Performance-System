@@ -1,5 +1,6 @@
 import {  apiConnector } from "./apiConnector";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
+console.log(" authService BASE_URL =", BASE_URL);
 const AUTH_STORAGE_KEY = "newPrdAuth";
 
 const saveSession = (session) => {

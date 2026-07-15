@@ -1,5 +1,6 @@
 import {   apiConnector } from "./apiConnector";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
+console.log(" charityService BASE_URL =", BASE_URL);
 export const charityService = {
   async signupCharity(payload) {
     const response = await   apiConnector({

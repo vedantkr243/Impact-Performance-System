@@ -1,5 +1,6 @@
 import { apiConnector } from "./apiConnector";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
+console.log(" drawService BASE_URL =", BASE_URL);
 const unwrap = (response) => {
   const payload = response?.data ?? response ?? {};
   return payload?.data ?? payload;

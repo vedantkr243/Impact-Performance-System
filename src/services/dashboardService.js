@@ -1,5 +1,6 @@
 import {   apiConnector } from "./apiConnector";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
+console.log(" dashboardService BASE_URL =", BASE_URL);
 const normalizeScores = (scores) =>
   scores.map((item) => ({
     score: item.score,
