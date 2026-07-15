@@ -1,4 +1,4 @@
-import { apiConnector } from ". apiConnector";
+import {  apiconnector } from "./apiconnector";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const AUTH_STORAGE_KEY = "newPrdAuth";
 
@@ -21,7 +21,7 @@ export const authService = {
     localStorage.removeItem(AUTH_STORAGE_KEY);
   },
 async auth0Login(accessToken) {
-  const response = await apiConnector({
+  const response = await  apiconnector({
     method: "POST",
     url: `${BASE_URL} api/v1/auth/auth0-login`,
     headers: {
@@ -37,7 +37,7 @@ async auth0Signup(accessToken, payload) {
     payload.name?.trim() ||
     [payload.firstName, payload.lastName].filter(Boolean).join(" ").trim();
 
-  const response = await apiConnector({
+  const response = await  apiconnector({
     method: "POST",
     url: `${BASE_URL} api/v1/auth/auth0-signup`,
     headers: {
@@ -62,7 +62,7 @@ async auth0Signup(accessToken, payload) {
   return session;
 },
 async auth0GetMe(user) {
-  const response = await apiConnector({
+  const response = await  apiconnector({
     method:"POST",
     url: `${BASE_URL} api/v1/auth/auth0SignIn`,
     body: user
@@ -71,7 +71,7 @@ async auth0GetMe(user) {
     return response.data;
 },
   async login(credentials) {
-    const response = await apiConnector({
+    const response = await  apiconnector({
       method: "POST",
       url: `${BASE_URL} api/v1/auth/login`,
       body: credentials
@@ -82,7 +82,7 @@ async auth0GetMe(user) {
   },
 
   async sendOtp({ email }) {
-    const response = await apiConnector({
+    const response = await  apiconnector({
       method: "POST",
       url: `${BASE_URL} api/v1/auth/send-otp`,
       body: { email }
@@ -92,7 +92,7 @@ async auth0GetMe(user) {
   },
 
   async verifyOtp({ email, otp }) {
-    const response = await apiConnector({
+    const response = await  apiconnector({
       method: "POST",
       url: `${BASE_URL} api/v1/auth/verify-otp`,
       body: { email, otp }
@@ -106,7 +106,7 @@ async auth0GetMe(user) {
       payload.name?.trim() ||
       [payload.firstName, payload.lastName].filter(Boolean).join(" ").trim();
 
-    const response = await apiConnector({
+    const response = await  apiconnector({
       method: "POST",
       url: `${BASE_URL} api/v1/auth/signup`,
       body: {
@@ -131,7 +131,7 @@ async auth0GetMe(user) {
   },
 
   async getMe(token) {
-    const response = await apiConnector({
+    const response = await   apiconnector({
       method: "GET",
       url: `${BASE_URL} api/v1/auth/me`,
       token

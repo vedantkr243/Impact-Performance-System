@@ -1,8 +1,8 @@
-import { apiConnector } from ". apiConnector";
+import {   apiconnector } from "./apiconnector";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 export const billingService = {
   async createCheckoutSession(token, planCode) {
-    const response = await apiConnector({
+    const response = await   apiconnector({
       method: "POST",
       url: `${BASE_URL} api/v1/billing/checkout-session`,
       token,

@@ -1,4 +1,4 @@
-import { apiConnector } from ". apiConnector";
+import {   apiconnector } from "./apiconnector";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const unwrap = (response) => {
   const payload = response?.data ?? response ?? {};
@@ -7,7 +7,7 @@ const unwrap = (response) => {
 
 const fetchStatic = async (url, token) => {
   try {
-    return unwrap(await apiConnector({ method: "GET", url, token }));
+    return unwrap(await   apiconnector({ method: "GET", url, token }));
   } catch {
     return {};
   }
