@@ -105,29 +105,21 @@ function SignupSubscription() {
       ).unwrap();
 
       try {
-        const checkoutPayload = await billingService.createCheckoutSession(
-          session.token,
-          selectedPlan
-        );
-        const checkout = checkoutPayload?.checkout;
+        // Razorpay temporarily disabled
+  // const checkout = checkoutPayload?.checkout;
 
-        if (checkout?.provider === "mock") {
-          alert("Subscription activated in mock billing mode.");
-          navigate(getDashboardPath(session.user));
-          return;
-        }
-        if (checkout?.subscriptionId && checkout?.keyId) {
-          openRazorpayCheckout({
-            checkout,
-            userData,
-            selectedPlan,
-            onSuccess: () => {
-              alert("Payment successful. Your subscription is activating.");
-              navigate(getDashboardPath(session.user));
-            }
-          });
-          return;
-        }
+  // if (checkout?.subscriptionId && checkout?.keyId) {
+  //   openRazorpayCheckout({
+  //     checkout,
+  //     userData,
+  //     selectedPlan,
+  //     onSuccess: () => {
+  //       alert("Payment successful.");
+  //       navigate(getDashboardPath(session.user));
+  //     }
+  //   });
+  //   return;
+  // }
       } catch (checkoutError) {
         console.warn("Checkout unavailable after signup:", checkoutError);
         alert(
