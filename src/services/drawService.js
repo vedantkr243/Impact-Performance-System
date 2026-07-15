@@ -1,5 +1,5 @@
 import { apiConnector } from "./apiConnector";
-
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 const unwrap = (response) => {
   const payload = response?.data ?? response ?? {};
   return payload?.data ?? payload;
@@ -26,7 +26,7 @@ export const drawService = {
   async enterDraw(token, planCode) {
     const response = await apiConnector({
       method: "POST",
-      url: "/api/v1/draws/enter",
+      url: `${BASE_URL}/api/v1/draws/enter`,
       token,
       body: planCode ? { planCode } : {}
     });

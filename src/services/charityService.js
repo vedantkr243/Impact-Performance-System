@@ -1,10 +1,10 @@
 import { apiConnector } from "./apiConnector";
-
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 export const charityService = {
   async signupCharity(payload) {
     const response = await apiConnector({
       method: "POST",
-      url: "/api/v1/charity/signup",
+      url: `${BASE_URL}/api/v1/charity/signup`,
       body: {
         name: payload.name,
         email: payload.email,
@@ -21,7 +21,7 @@ export const charityService = {
   async getCharityDetails(charityId, token) {
     const response = await apiConnector({
       method: "GET",
-      url: `/api/v1/charity/${charityId}`,
+      url: `${BASE_URL}/api/v1/charity/${charityId}`,
       token
     });
 
@@ -31,7 +31,7 @@ export const charityService = {
   async getCharityRevenue(charityId, token) {
     const response = await apiConnector({
       method: "GET",
-      url: `/api/v1/charity/${charityId}/revenue`,
+      url: `${BASE_URL}/api/v1/charity/${charityId}/revenue`,
       token
     });
 
